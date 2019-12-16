@@ -872,8 +872,8 @@ namespace Kiosk_GSTC
         public void RefreshOrderList()
         {
             int price = orderList_refresh();
-            this.order_list_lbl.Text = this.order + "\n\n\n 총 금액 : " + price + "원";
-            this.order_list_lbl.Refresh();
+            this.order_richBox.Text = this.order + "\n 총 금액 : " + price + "원";
+            this.order_richBox.Refresh();
         }
 
         private int orderList_refresh()
@@ -951,7 +951,8 @@ namespace Kiosk_GSTC
 
         private void order_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(order + '\n' + "주문되었습니다\n\n" + "금액 : " + orderList_refresh() + "원\n");
+            orderLayout orderList = new orderLayout(order + "\n" + "주문되었습니다\n\n" + "금액 : " + orderList_refresh() + "원\n");
+            orderList.Show();
 
             for (int i = 0; i < 10; i++)
             {
