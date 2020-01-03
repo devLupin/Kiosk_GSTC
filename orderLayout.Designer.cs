@@ -34,7 +34,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Location = new System.Drawing.Point(469, 584);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 59);
@@ -45,7 +45,7 @@
             // 
             // order_lbox
             // 
-            this.order_lbox.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.order_lbox.Font = new System.Drawing.Font("휴먼둥근헤드라인", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.order_lbox.Location = new System.Drawing.Point(12, 12);
             this.order_lbox.Name = "order_lbox";
             this.order_lbox.Size = new System.Drawing.Size(451, 561);
@@ -62,7 +62,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "orderLayout";
-            this.Text = "orderLayout";
+            this.Text = "주문확인";
             this.ResumeLayout(false);
 
         }

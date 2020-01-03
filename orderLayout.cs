@@ -15,7 +15,8 @@ namespace Kiosk_GSTC
         public orderLayout(string order_list)
         {
             InitializeComponent();
-            order_lbox.Text = order_list;
+            order_lbox.Text = "고객님의 주문내역은 \n" + "아래와 같습니다. \n\n"
+                + order_list;
         }
 
         private void button1_Click(object sender, EventArgs e)

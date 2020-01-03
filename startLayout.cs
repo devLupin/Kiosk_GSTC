@@ -12,7 +12,7 @@ namespace Kiosk_GSTC
 {
     public partial class startLayout : Form
     {
-        /* 회전형 경로
+        /*// 회전형 경로
         private string setMenu_path = @"C:\Users\회전형키오스크2\Desktop\새 폴더\새 폴더\setMenu_pictures\";
         private string singleMenu_path = @"C:\Users\회전형키오스크2\Desktop\새 폴더\새 폴더\singleMenu_pictures\";
         private string drink_path = @"C:\Users\회전형키오스크2\Desktop\새 폴더\새 폴더\drink_pictures\";
@@ -20,11 +20,13 @@ namespace Kiosk_GSTC
         private string logo_path = @"C:\Users\회전형키오스크2\Desktop\새 폴더\새 폴더\logo.JPG";
         */
 
+        
         private string setMenu_path = @"C:\Users\devLupin\Source\Repos\Kiosk_GSTC\Kiosk_GSTC\setMenu_pictures\";
         private string singleMenu_path = @"C:\Users\devLupin\Source\Repos\Kiosk_GSTC\Kiosk_GSTC\singleMenu_pictures\";
         private string drink_path = @"C:\Users\devLupin\Source\Repos\Kiosk_GSTC\Kiosk_GSTC\drink_pictures\";
         private string sideMenu_path = @"C:\Users\devLupin\Source\Repos\Kiosk_GSTC\Kiosk_GSTC\sideMenu_pictures\";
         private string logo_path = @"C:\Users\devLupin\Source\Repos\Kiosk_GSTC\Kiosk_GSTC\logo.JPG";
+        
 
         private int[] setMenu_orderList;
         private int[] singleMenu_orderList;
@@ -53,10 +55,51 @@ namespace Kiosk_GSTC
 
         private string order;
 
+        private void menu_tab_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font TabFont;
+            Brush BackBrush = new SolidBrush(Color.White); //Set background color
+            Brush ForeBrush = new SolidBrush(Color.Black);//Set foreground color
+            if (e.Index == this.menu_tab.SelectedIndex)
+            {
+                TabFont = new Font(e.Font, FontStyle.Bold);
+            }
+            else
+            {
+                TabFont = e.Font;
+
+            }
+            string TabName = this.menu_tab.TabPages[e.Index].Text;
+            StringFormat sf = new StringFormat();
+            //sf.Alignment = StringAlignment.Center;
+            e.Graphics.FillRectangle(BackBrush, e.Bounds);
+
+            Rectangle r = e.Bounds;
+            r = new Rectangle(r.X, r.Y + 3, r.Width, r.Height - 3);
+            e.Graphics.DrawString(TabName, TabFont, ForeBrush, r, sf);
+            //Dispose objects
+            sf.Dispose();
+            if (e.Index == this.menu_tab.SelectedIndex)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.Aqua), e.Bounds);
+                e.Graphics.DrawString(TabName, new Font(e.Font, FontStyle.Bold), ForeBrush, r, sf);
+
+                TabFont.Dispose();
+                BackBrush.Dispose();
+            }
+            else
+            {
+                BackBrush.Dispose();
+                ForeBrush.Dispose();
+            }
+        }
+
         public startLayout()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+
+            menu_tab.DrawItem += new DrawItemEventHandler(menu_tab_DrawItem);
 
             setMenu_orderList = new int[10];
             singleMenu_orderList = new int[10];
@@ -151,6 +194,7 @@ namespace Kiosk_GSTC
             picture_side9.SizeMode = PictureBoxSizeMode.StretchImage;
 
             RefreshOrderList();
+            notice_usage();
         }
 
         private void single1_m_btn_Click(object sender, EventArgs e)
@@ -926,6 +970,17 @@ namespace Kiosk_GSTC
             return all_price;
         }
 
+        private void notice_usage()
+        {
+            string temp = "\t\t <사용법>\n\n";
+            temp += "+ 버튼을 누르면 추가되고,\n";
+            temp += "- 버튼을 누르면 취소됩니다.\n\n";
+            temp += "상단의 \n단품, 세트, 음료, 사이드 메뉴를 \n추가해주세요 \n";
+
+            this.order_richBox.Text = temp;
+            this.order_richBox.Refresh();
+        }
+
         private void deleteOrder_btn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("선택했던 모든 주문이 지워집니다. 정말 지우시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -942,6 +997,7 @@ namespace Kiosk_GSTC
 
                 RefreshOrderList();
                 RefreshLabel();
+                notice_usage();
             }
             else
             {
@@ -964,6 +1020,77 @@ namespace Kiosk_GSTC
 
             RefreshOrderList();
             RefreshLabel();
+            notice_usage();
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drink_1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drink_2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drink_3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drink_4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drink_5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drink_6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
