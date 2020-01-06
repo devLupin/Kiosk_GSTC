@@ -16,7 +16,7 @@ namespace Kiosk_GSTC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new startLayout());
+            Application.Run(new firstLayout());
         }
     }
 }

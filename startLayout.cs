@@ -12,6 +12,7 @@ namespace Kiosk_GSTC
 {
     public partial class startLayout : Form
     {
+
         /*// 회전형 경로
         private string setMenu_path = @"C:\Users\회전형키오스크2\Desktop\새 폴더\새 폴더\setMenu_pictures\";
         private string singleMenu_path = @"C:\Users\회전형키오스크2\Desktop\새 폴더\새 폴더\singleMenu_pictures\";
@@ -1007,8 +1008,8 @@ namespace Kiosk_GSTC
 
         private void order_btn_Click(object sender, EventArgs e)
         {
-            orderLayout orderList = new orderLayout(order + "\n" + "주문되었습니다\n\n" + "금액 : " + orderList_refresh() + "원\n");
-            orderList.Show();
+            //orderLayout orderList = new orderLayout(order + "\n" + "주문되었습니다\n\n" + "금액 : " + orderList_refresh() + "원\n");
+            //orderList.Show();
 
             for (int i = 0; i < 10; i++)
             {

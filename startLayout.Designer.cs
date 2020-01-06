@@ -3114,7 +3114,7 @@
             this.deleteOrder_btn.Name = "deleteOrder_btn";
             this.deleteOrder_btn.Size = new System.Drawing.Size(239, 102);
             this.deleteOrder_btn.TabIndex = 4;
-            this.deleteOrder_btn.Text = "주문삭제";
+            this.deleteOrder_btn.Text = "주문 초기화";
             this.deleteOrder_btn.UseVisualStyleBackColor = false;
             this.deleteOrder_btn.Click += new System.EventHandler(this.deleteOrder_btn_Click);
             // 
@@ -3140,11 +3140,11 @@
             // order_richBox
             // 
             this.order_richBox.BackColor = System.Drawing.Color.White;
-            this.order_richBox.Font = new System.Drawing.Font("휴먼둥근헤드라인", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.order_richBox.Font = new System.Drawing.Font("휴먼둥근헤드라인", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.order_richBox.ForeColor = System.Drawing.Color.Black;
             this.order_richBox.Location = new System.Drawing.Point(1226, 293);
             this.order_richBox.Name = "order_richBox";
-            this.order_richBox.Size = new System.Drawing.Size(498, 591);
+            this.order_richBox.Size = new System.Drawing.Size(579, 591);
             this.order_richBox.TabIndex = 6;
             this.order_richBox.Text = "";
             // 
