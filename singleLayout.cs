@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using Microsoft.Speech;
+using Microsoft.Speech.Synthesis;
+
 namespace Kiosk_GSTC
 {
     public partial class singleLayout : Form
     {
-        string []singleMenu = {"트러플머쉬룸와퍼", "더블와퍼", "베이컨치즈와퍼", "콰트로치즈와퍼", "통새우와퍼", "비프칠리 통모짜와퍼"};
-        int[] single;
+        private SpeechSynthesizer ts = new SpeechSynthesizer();
+
+        private string []singleMenu = {"트러플머쉬룸와퍼", "더블와퍼", "베이컨치즈와퍼", "콰트로치즈와퍼", "통새우와퍼", "비프칠리 통모짜와퍼"};
+        private int[] single;
 
         public singleLayout(int []single)
         {
@@ -28,6 +33,11 @@ namespace Kiosk_GSTC
             single4_btn.Text = singleMenu[3];
             single5_btn.Text = singleMenu[4];
             single6_btn.Text = singleMenu[5];
+
+            ts.SelectVoice("Microsoft Server Speech Text to Speech Voice (ko-KR, Heami)");
+            ts.SetOutputToDefaultAudioDevice();
+
+            ts.Speak("사진을 클릭해서 수량을 선택해주세요.");
         }
 
         private void single1_btn_Click(object sender, EventArgs e)

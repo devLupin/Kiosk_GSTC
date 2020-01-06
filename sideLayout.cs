@@ -7,12 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using Microsoft.Speech;
+using Microsoft.Speech.Synthesis;
+
+
 namespace Kiosk_GSTC
 {
     public partial class sideLayout : Form
     {
-        string[] sideMenu = { "콘샐러드", "치즈프라이", "바삭킹 2조각", "볼케이노칠리프라이", "칠리프라이", "바삭킹(까망베르치즈소스)" };
-        int[] side;
+        SpeechSynthesizer ts = new SpeechSynthesizer();
+
+
+        private string[] sideMenu = { "콘샐러드", "치즈프라이", "바삭킹 2조각", "볼케이노칠리프라이", "칠리프라이", "바삭킹(까망베르치즈소스)" };
+        private int[] side;
 
         public sideLayout(int[] side)
         {
@@ -28,6 +35,11 @@ namespace Kiosk_GSTC
             side4_btn.Text = sideMenu[3];
             side5_btn.Text = sideMenu[4];
             side6_btn.Text = sideMenu[5];
+
+            ts.SelectVoice("Microsoft Server Speech Text to Speech Voice (ko-KR, Heami)");
+            ts.SetOutputToDefaultAudioDevice();
+
+            ts.Speak("사진을 클릭해서 수량을 선택해주세요.");
         }
 
         private void side1_btn_Click(object sender, EventArgs e)

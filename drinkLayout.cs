@@ -7,12 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using Microsoft.Speech;
+using Microsoft.Speech.Synthesis;
+
+
 namespace Kiosk_GSTC
 {
     public partial class drinkLayout : Form
     {
-        string[] drinkMenu = { "스프라이트(중)", "스프라이트(대)", "코카-콜라 제로(중)", "코카-콜라 제로(대)", "환타오렌지", "미닛메이드" };
-        int[] drink;
+        private SpeechSynthesizer ts = new SpeechSynthesizer();
+
+        private string[] drinkMenu = { "스프라이트(중)", "스프라이트(대)", "코카-콜라 제로(중)", "코카-콜라 제로(대)", "환타오렌지", "미닛메이드" };
+        private int[] drink;
 
         public drinkLayout(int[] drink)
         {
@@ -28,6 +34,12 @@ namespace Kiosk_GSTC
             drink4_btn.Text = drinkMenu[3];
             drink5_btn.Text = drinkMenu[4];
             drink6_btn.Text = drinkMenu[5];
+
+
+            ts.SelectVoice("Microsoft Server Speech Text to Speech Voice (ko-KR, Heami)");
+            ts.SetOutputToDefaultAudioDevice();
+
+            ts.Speak("사진을 클릭해서 수량을 선택해주세요.");
         }
 
         private void drink1_btn_Click(object sender, EventArgs e)
